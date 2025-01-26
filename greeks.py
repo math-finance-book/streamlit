@@ -99,7 +99,8 @@ def main():
         This interactive app illustrates how the Greeks (delta, gamma, vega, 
         theta, and rho) vary in the Black-Scholes model as a function of 
         the underlying asset price \( S \) and other model parameters.  Click the $>$ arrow 
-        above to open up a window with sliders that control the other parameters.
+        above to open up a window with sliders that control the other parameters, including whether the option
+        is a call or a put..
         """
     )
 
