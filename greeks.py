@@ -92,14 +92,14 @@ def greeks(S, K, r, sigma, T, option_type="call"):
 # -------------------------------
 
 def main():
-    st.title("Black-Scholes Greeks Explorer")
+    # st.title("")
 
     st.markdown(
         """
-        This interactive app illustrates how the **Greeks** (Delta, Gamma, Vega, 
-        Theta, and Rho) vary under the **Black-Scholes** model as a function of 
-        the underlying asset price \( S \). Use the sliders on the left to adjust 
-        the parameters in real-time.
+        This interactive app illustrates how the Greeks (delta, gamma, vega, 
+        theta, and rho) vary in the Black-Scholes model as a function of 
+        the underlying asset price \( S \) and other model parameters. Use the 
+        sliders on the left to adjust the other parameters.
         """
     )
 
