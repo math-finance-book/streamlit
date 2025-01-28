@@ -39,7 +39,7 @@ def intrinsic_put(S, K):
 
 # Streamlit App
 def main():
-    st.title("Black–Scholes Call and Put Option Pricing (With Dividend Yield)")
+    # st.title("Black–Scholes Call and Put Option Pricing (With Dividend Yield)")
 
     st.sidebar.header("Model Parameters")
     # Sliders for key parameters
@@ -53,7 +53,7 @@ def main():
     dividend_yield = st.sidebar.slider("Dividend Yield (q, in %)", 
                                        min_value=0.0, max_value=10.0, value=1.0, step=0.1) / 100.0
 
-    st.write("### Parameters")
+    st.write("#### Current Parameters")
     st.write(f"- Strike = {strike}")
     st.write(f"- Time to maturity = {time_to_maturity} years")
     st.write(f"- Risk-free rate = {risk_free_rate:.2%}")
