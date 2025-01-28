@@ -55,8 +55,8 @@ def main():
     )
     
     st.sidebar.header("Model Parameters")
-    n_rebalances = st.sidebar.slider("Number of Rebalances", min_value=10, max_value=500, value=50, step=10)
-    n_paths = st.sidebar.slider("Number of Simulations", min_value=10, max_value=500, value=100, step=10)
+    n_rebalances = st.sidebar.slider("Number of Rebalances", min_value=10, max_value=1000, value=20, step=10)
+    n_paths = st.sidebar.slider("Number of Simulations", min_value=10, max_value=500, value=50, step=10)
     S0 = st.sidebar.slider("Initial Stock Price (S₀)", min_value=10, max_value=200, value=100, step=1)
     strike = st.sidebar.slider("Strike Price (K)", min_value=10, max_value=200, value=100, step=1)
     T = st.sidebar.slider("Time to Maturity (T, in years)", min_value=0.1, max_value=3.0, value=1.0, step=0.1)
