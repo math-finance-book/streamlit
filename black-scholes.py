@@ -39,7 +39,13 @@ def intrinsic_put(S, K):
 
 # Streamlit App
 def main():
-    # st.title("Black–Scholes Call and Put Option Pricing (With Dividend Yield)")
+    st.markdown(
+        """
+        This interactive app illustrates how the Black-Scholes call and put values vary as a function of 
+        the underlying asset price \( S \) and other model parameters.  Click the $>$ arrow 
+        above to open up a window with sliders that control the other parameters.
+        """
+    )
 
     st.sidebar.header("Model Parameters")
     # Sliders for key parameters
