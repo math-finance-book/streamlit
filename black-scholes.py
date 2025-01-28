@@ -9,7 +9,7 @@ def bs_call_price(S, K, T, r, sigma, q):
     Returns the Black-Scholes call option price with dividend yield.
     """
     if sigma <= 0 or T <= 0:
-        return max(0.0, S - K)
+        return max(0, np.exp(-q * T) * S - np.exp(-r * T) * K)
     
     d1 = (np.log(S / K) + (r - q + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
     d2 = d1 - sigma * np.sqrt(T)
@@ -22,7 +22,7 @@ def bs_put_price(S, K, T, r, sigma, q):
     Returns the Black-Scholes put option price with dividend yield.
     """
     if sigma <= 0 or T <= 0:
-        return max(0.0, K - S)
+        return max(0, np.exp(-r * T) * K - np.exp(-q * T) * S)
     
     d1 = (np.log(S / K) + (r - q + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
     d2 = d1 - sigma * np.sqrt(T)
