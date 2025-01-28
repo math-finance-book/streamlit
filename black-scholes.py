@@ -60,7 +60,7 @@ def main():
     st.write(f"- Volatility = {volatility:.2%}")
     st.write(f"- Dividend yield = {dividend_yield:.2%}")
 
-    st.write("### Option Values vs. Underlying Asset Price")
+    
 
     # Underlying price range
     S_min = 0
