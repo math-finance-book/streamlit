@@ -41,7 +41,7 @@ def intrinsic_put(S, K):
 def main():
     st.markdown(
         """
-        This interactive app illustrates how the Black-Scholes call and put values vary as a function of 
+        This illustrates how the Black-Scholes call and put values vary as a function of 
         the underlying asset price \( S \) and other model parameters.  Click the $>$ arrow 
         above to open up a window with sliders that control the other parameters.
         """

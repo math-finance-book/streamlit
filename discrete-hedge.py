@@ -45,7 +45,7 @@ def main():
 
     st.markdown(
         """
-        This interactive app illustrates the gains and losses from a discretely-rebalanced delta hedge
+        This illustrates the gains and losses from a discretely-rebalanced delta hedge
         under the Black-Scholes assumptions.  It assumes that a European call is sold and it is hedged by 
         replicating a long call.  The initial portfolio value is zero.  Click the $>$ arrow 
         above to open up a window with sliders that control the model parameters, including the number of times
