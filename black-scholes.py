@@ -42,7 +42,7 @@ def main():
     st.markdown(
         """
         This illustrates how the Black-Scholes call and put values vary as a function of 
-        the underlying asset price \( S \) and other model parameters.  Click the $>$ arrow 
+        the underlying asset price \( S \) and other model parameters.  Click the &#9654; arrow 
         above to open up a window with sliders that control the other parameters.
         """
     )
