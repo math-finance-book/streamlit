@@ -46,10 +46,11 @@ def main():
     st.markdown(
         """
         This illustrates the gains and losses from a discretely-rebalanced delta hedge
-        under the Black-Scholes assumptions.  It assumes that a European call is sold and it is hedged by 
-        replicating a long call.  The initial portfolio value is zero.  Click the $>$ arrow 
+        under the Black-Scholes assumptions.  It assumes that a European call is sold and is hedged by 
+        replicating a long call.  The initial portfolio value is zero.  The final portfolio value is the
+        value of the replicating portfolio minus the intrinsic value of the call.  Click the $>$ arrow 
         above to open up a window with sliders that control the model parameters, including the number of times
-        the hedge is rebalanced and the number of simulations
+        the hedge is rebalanced and the number of simulations.
         """
     )
     
