@@ -7,7 +7,7 @@ import pandas as pd
 
 # Set up the Streamlit page
 st.set_page_config(page_title="Binomial Trees", layout="wide")
-st.title("Binomial Tree Option Pricing")
+st.title("")
 
 # Add description
 st.write("""
