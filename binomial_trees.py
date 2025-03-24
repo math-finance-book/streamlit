@@ -150,6 +150,7 @@ kind = f"{exercise_type} {option_type.lower()}"
 tree = stockTree(S, 1 + u/100, n)
 fig_stock = treePlot(tree, kind="stock")
 fig_stock.update_yaxes(title="Underlying Price")
+fig_stock.update_layout(title_text="Underlying Tree")
 
 Tree = europeanTree if exercise_type == "European" else americanTree
 tree, prob = Tree(S, K, r/100, 1 + u/100, n, option_type.lower())
@@ -158,15 +159,14 @@ fig_option = treePlot(tree, kind="option")
 if option_type.lower() == "put":
     fig_option.update_yaxes(autorange="reversed")
 fig_option.update_yaxes(title=kind.title() + " Value")
+fig_option.update_layout(title_text=kind.title()+" Tree")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write("Stock Price Tree")
-    st.plotly_chart(fig_stock, use_container_width=True)
+   st.plotly_chart(fig_stock, use_container_width=True)
 
 with col2:
-    st.write(f"{kind.title()} Price Tree")
     st.plotly_chart(fig_option, use_container_width=True)
 
 # Move these outside the columns
