@@ -11,8 +11,8 @@ st.title("Binomial Tree Option Pricing")
 
 # Add description
 st.write("""
-This app demonstrates option pricing using the binomial tree model.
-Enter the parameters below to calculate option prices and view the trees.
+This figure demonstrates option pricing using the binomial tree model.
+Enter the parameters below to calculate option prices and view the trees.  The interest rate should be the rate per period.  Notice that the vertical axis is reverse ordered for put options, because higher stock prices produce lower put values.
 """)
 
 ##############################################
@@ -105,9 +105,13 @@ def treePlot(tree, kind):
             hovertemplate=string,
             marker=dict(size=12, color=color),
             line=dict(color=color),
+            showlegend=False
         )
         fig.add_trace(trace)
-    fig.update_layout(xaxis=dict(tickmode="linear", tick0=0, dtick=1))
+    fig.update_layout(
+        xaxis=dict(tickmode="linear", tick0=0, dtick=1),
+        showlegend=False
+    )
     fig.update_xaxes(title="Time")
     fig.update_layout(yaxis_tickprefix="$", yaxis_tickformat=",.0f")
     return fig
@@ -142,8 +146,8 @@ with col1:
     S = st.number_input("Initial Stock Price ($)", min_value=1.0, value=100.0, step=1.0)
     K = st.number_input("Strike Price ($)", min_value=1.0, value=100.0, step=1.0)
 with col2:
-    r = st.number_input("Interest Rate (%)", min_value=0.0, value=5.0, step=0.1)
-    u = st.number_input("Up Step (%)", min_value=0.1, value=10.0, step=0.1)
+    r = st.number_input("Interest Rate (%)", min_value=0.0, value=1.0, step=0.1)
+    u = st.number_input("Up Step (%)", min_value=0.1, value=5.0, step=0.1)
 with col3:
     n = st.number_input("Number of Steps", min_value=1, value=3, step=1)
 
@@ -160,10 +164,17 @@ if option_type.lower() == "put":
     fig_option.update_yaxes(autorange="reversed")
 fig_option.update_yaxes(title=kind.title() + " Value")
 
-st.write("Stock Price Tree")
-st.plotly_chart(fig_stock, use_container_width=True)
-st.write(f"{kind.title()} Price Tree")
-st.plotly_chart(fig_option, use_container_width=True)
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("Stock Price Tree")
+    st.plotly_chart(fig_stock, use_container_width=True)
+
+with col2:
+    st.write(f"{kind.title()} Price Tree")
+    st.plotly_chart(fig_option, use_container_width=True)
+
+# Move these outside the columns
 st.write(f"{kind} value at date 0: ${value:.2f}")
 st.write(f"Risk-neutral probability: {prob:.1%}")
 
