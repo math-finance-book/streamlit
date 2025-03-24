@@ -12,7 +12,7 @@ st.title("Binomial Tree Option Pricing")
 # Add description
 st.write("""
 This figure demonstrates option pricing using the binomial tree model.
-Enter the parameters below to calculate option prices and view the trees.  The interest rate should be the rate per period.  Notice that the vertical axis is reverse ordered for put options, because higher stock prices produce lower put values.
+Enter the parameters below to calculate option prices and view the trees.  The interest rate should be the rate per period.  The up step should be input here as a percentage change.  The parameter $u$ in the text is $1 + \text{up step}$ (as a decimal).  In this figure, we are taking $d=1/u$. Notice that the vertical axis is reverse ordered for put options, because higher stock prices produce lower put values.
 """)
 
 ##############################################
